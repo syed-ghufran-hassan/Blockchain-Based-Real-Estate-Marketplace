@@ -63,6 +63,7 @@ contract BlockEstate is ERC721URIStorage {
     function getListedTokenForId(
         uint256 tokenId
     ) public view returns (ListedToken memory) {
+        require(_exists(tokenId), "Token doesn't exist");
         return idToListedToken[tokenId];
     }
 
